@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-export default function Register() {
+export default function Register( { setUser } ) {
     const [ username, setUsername ] = useState('')
     const [ password, setPassword ] = useState('')
-    const [passwordRepeat, setPasswordRepeat] = useState('')
+    const [ passwordRepeat, setPasswordRepeat ] = useState('')
 
     function handleUsername(evt) {
         setUsername(evt.target.value)
@@ -16,11 +16,13 @@ export default function Register() {
     }
 
     return (
-        <form onSubmit={e => { e.preventDefault(); setUsername(username); }}>
+        <form onSubmit={e => { e.preventDefault(); setUser(username); }}>
             <label htmlFor="register-username">Username:</label>
             <input type="text" value={username} onChange={handleUsername} name="register-username" id="register-username" />
+
             <label htmlFor="register-password">Password:</label>
             <input type="text" value={password} onChange={handlePassword} name="register-password" id="register-password" />
+            
             <label htmlFor="register-password-repeat">Password:</label>
             <input type="text" value={passwordRepeat} onChange={handlePasswordRepeat} name="register-password-repeat" id="register-password-repeat" />
 
