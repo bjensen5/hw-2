@@ -6,10 +6,10 @@ export default function Todo({ title, description, dateCreated, complete, dateCo
             <h3>{title}</h3>
             <div>{description}</div>
             <br />
-            <div>{dateCreated} <br/> <b>{complete}</b> </div>
-            <i> <div><b>{dateCompleted}</b></div> </i>
+            {dateCreated} <br/> <b>{complete}</b>
+            <i><b>{dateCompleted}</b></i>
         
-            <br/><br/>  
+            <br/>
         </div>
     )
 }

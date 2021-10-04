@@ -4,17 +4,15 @@ import Logout from '../Logout';
 import Register from '../Register';
 
 
-export default function Userbar() {
-
-    const [ user, setUser ] = useState('')
+export default function Userbar( { user, dispatchUser } ) {
 
     if (user) {
-        return <Logout user={user} setUser={setUser} />
+        return <Logout user={user} dispatchUser={dispatchUser} />
     } else {
         return (
             <>
-                <Login setUser={setUser} />
-                <Register setUser={setUser} />
+                <Login dispatchUser={dispatchUser} />
+                <Register dispatchUser={dispatchUser} />
             </>
         )
     }
